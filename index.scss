@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+// ==============================================
+// ==============================================
+// ==============================================
+
+.j-container {  // background: lightgreen;
+  margin: 0 auto;  
+  @media (max-width: #{$sm})  { padding: 0 15px;   }
+  @media (min-width: #{$sm})  { max-width: 510px;  }
+  @media (min-width: #{$md})  { max-width: 690px;  }
+  @media (min-width: #{$lg})  { max-width: 930px;  }
+  @media (min-width: #{$xl})  { max-width: 1110px; }
+  @media (min-width: #{$xxl}) { max-width: 1280px; }
+  min-width: 350px;
+}
+
+// ==============================================
+// ==============================================
+// ==============================================
+
+* {
+  box-sizing: border-box;
+}
+
+body {  background: #F5F5F5;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  margin-top: 100px;
+}
+
+.j-product-1d-grid { // 2 * 24px  +  6 * x  +  5 * 16px  =  1280  =>  x = 192
+  background: white;
+  display: flex;
+  gap: 16px;
+  overflow-x: scroll;
+  padding: 24px;
+  
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .j-item{  position: relative;
+
+    $x: 192px;
+    .j-img { 
+      height: $x;
+      width: $x;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-bottom: 16px;
+    }
+    .j-title{  // background: lightblue;
+      width: $x;
+      // ellipsis:
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .j-price {  // background: darkorange;
+      text-align: center;
+    }
+
+    .j-heart {  position: absolute;
+      $x1: 15px;
+      top: $x1; 
+      right: $x1;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    
+  }
+  .j-item[data-liked="true"] {  // border: solid red 10px;
+    .j-heart-full  { opacity: 1; }
+    .j-heart-empty { opacity: 0; }
+    
+  }
+  .j-item:not([data-liked="true"]) { // border: solid blue 10px;
+    .j-heart-full  { opacity: 0; }
+    .j-heart-empty { opacity: 1; }
+  }
+}

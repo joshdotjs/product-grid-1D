@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+.j-container {
+  margin: 0 auto;
+  min-width: 350px;
+}
+@media (max-width: 576px) {
+  .j-container {
+    padding: 0 15px;
+  }
+}
+@media (min-width: 576px) {
+  .j-container {
+    max-width: 510px;
+  }
+}
+@media (min-width: 768px) {
+  .j-container {
+    max-width: 690px;
+  }
+}
+@media (min-width: 992px) {
+  .j-container {
+    max-width: 930px;
+  }
+}
+@media (min-width: 1200px) {
+  .j-container {
+    max-width: 1110px;
+  }
+}
+@media (min-width: 1400px) {
+  .j-container {
+    max-width: 1280px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #F5F5F5;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  margin-top: 100px;
+}
+
+.j-product-1d-grid {
+  background: white;
+  display: flex;
+  gap: 16px;
+  overflow-x: scroll;
+  padding: 24px;
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  /* Hide scrollbar for Chrome, Safari and Opera */
+}
+.j-product-1d-grid::-webkit-scrollbar {
+  display: none;
+}
+.j-product-1d-grid .j-item {
+  position: relative;
+}
+.j-product-1d-grid .j-item .j-img {
+  height: 192px;
+  width: 192px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 16px;
+}
+.j-product-1d-grid .j-item .j-title {
+  width: 192px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  margin-bottom: 8px;
+}
+.j-product-1d-grid .j-item .j-price {
+  text-align: center;
+}
+.j-product-1d-grid .j-item .j-heart {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  transition: opacity 0.2s ease-in-out;
+}
+.j-product-1d-grid .j-item[data-liked=true] .j-heart-full {
+  opacity: 1;
+}
+.j-product-1d-grid .j-item[data-liked=true] .j-heart-empty {
+  opacity: 0;
+}
+.j-product-1d-grid .j-item:not([data-liked=true]) .j-heart-full {
+  opacity: 0;
+}
+.j-product-1d-grid .j-item:not([data-liked=true]) .j-heart-empty {
+  opacity: 1;
+}/*# sourceMappingURL=index.css.map */
